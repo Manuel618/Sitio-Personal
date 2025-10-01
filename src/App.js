@@ -22,12 +22,10 @@ export default function App() {
             </span>
             <div>
               <h1>Jesús Manuel Meraz Marrufo</h1>
-              <p className="tagline">Estudiante de ING DESARROLLO EN GESTIÓN DE SOFTWARE</p>
+              <p className="tagline">Estudiante de ING Desarrollo En Gestion De Software</p>
             </div>
           </div>
           <nav>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#pasatiempos">Pasatiempos</a>
             <button
               className="button ghost"
               onClick={() => setLight(!light)}
@@ -43,28 +41,14 @@ export default function App() {
         <section id="sobre-mi" className="card">
           <h2>¿Quién soy?</h2>
           <p>
-            Hola, soy <strong>Jesús Manuel</strong>. Estudio <strong>ING DESARROLLO EN GESTIÓN DE SOFTWARE</strong> y
-            me gusta aprender haciendo: construyo cosas pequeñas, pruebo ideas, me equivoco y vuelvo a intentarlo.
-            Soy organizado y me gusta dejar todo claro y limpio, desde el código hasta mis apuntes.
+           Soy estudiante de Ingeniería en Desarrollo y Gestión de Software. Me considero organizado, 
+           responsable y constante. Tengo más experiencia en desarrollo web con React, HTML/CSS y JavaScript, 
+           y trabajo con bases de datos relacionales (SQL y PostgreSQL). Me motiva aprender tecnologías que 
+           mejoren la experiencia del usuario y convertir ideas en interfaces claras y eficientes. Fuera del 
+           código, disfruto la música —especialmente la ópera— y soy fan de las series de detectives. 
+           También me encanta la comida, en especial la china. Además, colecciono figuras de anime, artículos 
+           de mis series favoritas y audífonos.
           </p>
-          <p>
-            Me considero alguien curioso y perseverante. Disfruto resolver problemas con soluciones simples,
-            bien documentadas y fáciles de mantener. Cuando algo no me sale a la primera, tomo notas,
-            reviso qué puedo mejorar y preparo una segunda versión más ordenada.
-          </p>
-          <p>
-            Ahora mismo estoy reforzando <strong>React</strong>, <strong>HTML/CSS</strong> y <strong>JavaScript</strong>,
-            además de bases de datos con <strong>SQL/PostgreSQL</strong>. También practico control de versiones con
-            <strong> Git y GitHub</strong>, y procuro cuidar detalles como accesibilidad, responsividad y buenas
-            prácticas (nombres claros, componentes reutilizables y commits entendibles).
-          </p>
-          <ul>
-            <li><strong>Frontend:</strong> Componentes, estado, props, enrutado básico y estilos.</li>
-            <li><strong>Backend/BD:</strong> Consultas SQL, modelos sencillos y conexión a BD.</li>
-            <li><strong>Flujo de trabajo:</strong> Git, ramas, issues y organización de tareas.</li>
-            <li><strong>Objetivo cercano:</strong> aplicar lo aprendido en proyectos reales y seguir mejorando paso a paso.</li>
-          </ul>
-          {/* En esta sección no muestro foto adicional */}
         </section>
 
         <section id="pasatiempos" className="card">
@@ -75,7 +59,7 @@ export default function App() {
               <h3>Cocina</h3>
               <p>
                 Cocinar me relaja y me organiza. Planeo recetas sencillas, cuido tiempos y presentación,
-                y anoto ajustes para repetir lo que sale bien. Me gusta preparar algo rico para mi familia sin complicarme.
+                y anoto ajustes para repetir lo que sale bien. Me gusta prepararlo para mi familia sin complicarme.
               </p>
             </article>
 
@@ -83,8 +67,8 @@ export default function App() {
               <div className="icon" aria-hidden="true">🎮</div>
               <h3>Juegos</h3>
               <p>
-                Juego para convivir y despejarme. Prefiero lo cooperativo y de estrategia porque exige coordinar,
-                comunicar y decidir rápido. Me gusta analizar cada partida para aprender y mejorar.
+                Juego para despejarme; prefiero las experiencias cooperativas y de estrategia. No tengo un título favorito: 
+                disfruto probar casi cualquier juego y aprender nuevas mecánicas.
               </p>
             </article>
 
@@ -92,8 +76,8 @@ export default function App() {
               <div className="icon" aria-hidden="true">📺</div>
               <h3>Ver series</h3>
               <p>
-                Me encantan las series de ciencia ficción y misterio. Disfruto fijarme en detalles y teorías; a veces
-                maratoneo y otras veo un episodio con calma para comentarlo después.
+              Soy fan de las series de detectives me gusta como los detectives encuentran las pistas par 
+              encontral al culpable. A veces hago maratón; otras, prefiero ver un episodio con calma.
               </p>
             </article>
           </div>
