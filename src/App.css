@@ -1,0 +1,149 @@
+/* Reset básico y layout raíz */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html, body { margin: 0; padding: 0; }
+
+/* Tema (variables) */
+:root{
+  --bg:#0b1220;
+  --surface:#121a2b;
+  --text:#e7ecf5;
+  --muted:#a7b1c2;
+  --brand:#5da9ff;
+  --brand-2:#7cffc4;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+
+  /* Tamaños clave */
+  --avatar-size: 120px;                 /* tamaño del avatar */
+  --header-h: var(--avatar-size);       /* altura del header igual al avatar */
+}
+:root.light{
+  --bg:#f6f8fc;
+  --surface:#ffffff;
+  --text:#151a25;
+  --muted:#58627a;
+  --brand:#0b72ff;
+  --brand-2:#00c896;
+}
+
+/* Fondo 100% sólido (sin degradados ni transparencias) */
+html{
+  background: var(--bg) !important;
+}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: var(--bg) !important;   /* sólido */
+  background-image: none !important;  /* por si quedó algún gradiente */
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: var(--header-h); /* empuja contenido bajo la barra fija */
+}
+.App { min-height: 100%; }
+
+/* Contenedor */
+.container{ width: min(1100px, 92%); margin-inline: auto; }
+
+/* Header / Nav — FIJO y SIN transparencia */
+.site-header{
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--surface);             /* fondo sólido */
+  background-image: none !important;      /* sin gradiente */
+  backdrop-filter: none;                  /* sin blur */
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+.header-inner{
+  height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0;                              /* sin padding vertical, usa height */
+}
+.brand{ display:flex; gap:1rem; align-items:center; }
+.brand h1{ font-size: 1.4rem; margin: 0; }
+.tagline{ margin: .1rem 0 0; color: var(--muted); }
+
+.avatar img{
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 999px;
+  background:#0f1625; border:1px solid rgba(255,255,255,.12);
+  padding:.35rem; object-fit: cover;
+}
+
+nav{ display:flex; align-items:center; gap:.75rem; }
+nav a{
+  color: var(--text); text-decoration: none;
+  padding:.4rem .7rem; border-radius: 999px; opacity:.9;
+}
+nav a:hover{ background: rgba(255,255,255,.08); }
+
+/* Botón tema */
+.button{
+  padding:.45rem .8rem; border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: transparent; color: var(--text); cursor: pointer;
+}
+.button.ghost:hover{ background: rgba(255,255,255,.08); }
+
+/* Tarjetas / secciones */
+.card{
+  /* si aún ves “veladura”, cambia esta línea a: background: var(--surface); */
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px; padding:1.2rem; margin:1rem 0; box-shadow: var(--shadow);
+}
+
+/* (Si quitaste la foto en “¿Quién soy?”, estas reglas no estorban) */
+.profile{ display:flex; gap:1rem; align-items:center; margin:1rem 0 0; }
+.profile img{
+  width:110px; height:110px; border-radius:999px;
+  background:#0f1625; border:1px solid rgba(255,255,255,.12);
+  padding:.35rem; object-fit: cover;
+}
+
+/* Grid pasatiempos */
+.grid{ display:grid; gap:1rem; }
+.hobbies{ grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+.hobby{
+  padding:1rem; border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.07);
+}
+.hobby h3{ margin:.2rem 0 .4rem; }
+.icon{ font-size:1.8rem; }
+
+/* Footer — sin “cuadro de color” */
+.site-footer{
+  padding:2rem 0;
+  text-align:center;
+  color: var(--muted);
+  background: transparent;        /* sin fondo */
+  border: 0;                      /* sin borde */
+  box-shadow: none;               /* sin sombra */
+}
+.site-footer .container,
+.site-footer small{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.site-footer.card{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Modo claro: ajustes */
+:root.light body{ background: var(--bg) !important; }
+:root.light .card{ background:#fff; border-color:#e7ecf5; box-shadow:0 10px 25px rgba(0,0,0,.06); }
+:root.light nav a:hover{ background: rgba(0,0,0,.06); }
+:root.light .avatar img{ background:#f1f5ff; border-color:#e7ecf5; }
+:root.light .site-header{
+  border-bottom-color:#e7ecf5;
+  box-shadow: 0 8px 22px rgba(0,0,0,.10);
+}
+
+/* Responsive */
+@media (max-width: 520px){
+  :root { --avatar-size: 92px; } /* header sigue igual al avatar */
+  .brand h1{ font-size: 1.2rem; }
+}
